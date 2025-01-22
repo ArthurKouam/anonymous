@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'inscription</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
+  <style>
+    :root {
+      --primary: #5A45FF;
+    }
+
+    .button.is-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .button.is-primary:hover {
+      background-color: #4839cc;
+      border-color: #4839cc;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">Connexion</h1>
+      <div class="box" style="max-width: 500px; margin: 0 auto;">
+        <form action="" method="POST">
+          <div class="field">
+            <label class="label" for="nom">Nom d'utilisateur</label>
+            <div class="control">
+              <input class="input user" type="text" name="pseudo" placeholder="Entrez votre pseudo" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="prenom">Mot de passe</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="entrer votre mot de passe" name="password" required>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="button is-primary is-fullwidth sub" type="submit">Se connecter</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+
+
+</html>

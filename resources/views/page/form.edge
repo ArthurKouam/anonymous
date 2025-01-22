@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envoyer un message anonyme</title>
+  <meta property="og:title" content="Envoyer un message anonyme à {{ pseudo }}">
+  <meta property="og:description" content=" {{ pseudo }} ne connaitra jamais votre identitée">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    .box {
+      max-width: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  @if(flashMessages.get('succes'))
+      @!component('components/notif', { 
+        type: 'success', 
+        message: 'Envoyer avec succès' 
+      })
+    @endif
+  <div class="box">
+    
+    <h1 class="title has-text-centered">Envoyer un message anonyme à {{ pseudo }}</h1>
+    <form action="" method="POST">
+      <div class="field">
+        <label class="label" for="message">Votre message</label>
+        <div class="control">
+          <textarea class="textarea" id="message" name="message" placeholder="Tapez votre message ici..." required></textarea>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary is-fullwidth" type="submit">
+            Envoyer
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

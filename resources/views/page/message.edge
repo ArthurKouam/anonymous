@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste des messages</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">Liste des messages</h1>
+
+      @if(messages.length > 0)
+        <div class="columns is-multiline">
+          @each(message in messages)
+            <div class="column is-4">
+              @component('components/single', { message, pseudo })
+              @endcomponent
+            </div>
+          @endeach
+        </div>
+      @else
+        <div class="notification is-warning has-text-centered">
+          Aucun message trouvé.
+        </div>
+      @endif
+    </div>
+  </section>
+</body>
+</html>

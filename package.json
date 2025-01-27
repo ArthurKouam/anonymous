@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "node ace serve --watch",
-    "build": "node ace build --production",
-    "start": "node build/server.js",
-    "test": "node ace test"
-  },
+  "dev": "node ace serve --watch",
+  "build": "node ace build --production",
+  "start": "node ace migration:run && node build/server.js",
+  "test": "node ace test"
+},
   "devDependencies": {
     "@adonisjs/assembler": "^5.9.6",
     "@japa/preset-adonis": "^1.2.0",

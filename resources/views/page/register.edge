@@ -25,6 +25,12 @@
 
 <body>
   <section class="section">
+    @if(flashMessages.get('register'))
+      @!component('components/notif', { 
+        type: 'error', 
+        message: 'Ce pseudo est deja utilisé',
+      })
+  @endif
     <div class="container">
       <h1 class="title has-text-centered">Inscription</h1>
       <div class="box" style="max-width: 500px; margin: 0 auto;">
@@ -49,6 +55,7 @@
         </form>
       </div>
     </div>
+    <p>Vous avez déjà un compte? <a href="/login" class="has-text-centered">Se connecter</a></p>
   </section>
 
   <script>

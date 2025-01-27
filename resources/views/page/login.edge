@@ -26,6 +26,12 @@
 <body>
   <section class="section">
     <div class="container">
+      @if(flashMessages.get('loginError'))
+        @!component('components/notif', { 
+          type: 'error', 
+          message: 'Nom d\'utilisateur ou mot de passe incorrect',
+        })
+      @endif
       <h1 class="title has-text-centered">Connexion</h1>
       <div class="box" style="max-width: 500px; margin: 0 auto;">
         <form action="" method="POST">
@@ -49,6 +55,7 @@
         </form>
       </div>
     </div>
+    <p>Nouveau? <a href="/register" class="has-text-centered">S'inscrire</a></p>
   </section>
 
 </body>

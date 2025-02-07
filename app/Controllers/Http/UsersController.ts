@@ -83,7 +83,6 @@ export default class UsersController {
     const user = await User.findBy('pseudo', pseudo);
 
     if(user){
-      console.log(user)
       return view.render('page/form', {pseudo: user.pseudo})
     }else{
       return await view.render('errors/not-found-user', { pseudo })

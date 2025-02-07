@@ -5,10 +5,10 @@ import Application from '@ioc:Adonis/Core/Application';
 export default class UsersController {
   async login({auth, request, response, session}: HttpContextContract){
     try {
-      const { user, password }: {user: string, password: string} = request.only(['user', 'password']);
+      const { pseudo, password }: {pseudo: string, password: string} = request.only(['pseudo', 'password']);
 
-      await auth.attempt(user, password, true);
-      return response.redirect(`/me/${user}`)
+      await auth.attempt(pseudo, password, true);
+      return response.redirect(`/me/${pseudo}`)
         
     } catch (error) {
       session.flash('loginError', 'Adressse mail ou nom d\'utilisateur incorrect');
